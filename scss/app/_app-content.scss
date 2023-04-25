@@ -1,0 +1,118 @@
+.appContent {
+	// height: 10vh;
+	overflow-y: scroll;
+	margin-left: $app-sidebar-width;
+	background: $black-400;
+	padding: 0 $app-content-padding-x;
+	// border-bottom: 2px solid $light;
+
+	& .lineSidebarDiv {
+		position: absolute;
+		border-left: 1.5px solid $light;
+		height: 90vh;
+		width: 2px;
+		margin-top: 5vh;
+		margin-left: -30px;
+		padding: 0;
+	}
+
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba($color: $skyblue-500, $alpha: 0.3);
+		border-radius: 5px;
+	}
+
+	@include for-phone-only {
+		height: 85vh;
+		margin-left: 0;
+		margin-top: $app-header-height;
+
+		& .lineSidebarDiv {
+			display: none;
+		}
+	}
+
+	@include for-tablet-portrait-up {
+		height: 85vh;
+		margin-left: 0;
+		margin-top: $app-header-height;
+
+		& .lineSidebarDiv {
+			display: none;
+		}
+	}
+
+	@include for-tablet-landscape-up {
+		height: 85vh;
+		margin-left: 0;
+		margin-top: $app-header-height;
+
+		& .lineSidebarDiv {
+			display: none;
+		}
+	}
+
+	@include for-desktop-up {
+		height: 100vh;
+		margin-left: $app-sidebar-width;
+		margin-top: 0;
+
+		& .lineSidebarDiv {
+			display: block;
+		}
+	}
+
+	@include for-big-desktop-up {
+		height: 100vh;
+		margin-left: $app-sidebar-width;
+		margin-top: 0;
+
+		& .lineSidebarDiv {
+			display: block;
+		}
+	}
+
+	@include for-big-desktop-up-xxl {
+		height: 100vh;
+		margin-left: 15vw;
+		margin-top: 0;
+
+		& .lineSidebarDiv {
+			display: block;
+		}
+	}
+}
+
+.disableScrollY {
+	overflow-y: hidden;
+
+	@include for-phone-only {
+		overflow-y: scroll;
+	}
+
+	@include for-tablet-portrait-up {
+		overflow-y: scroll;
+	}
+
+	@include for-tablet-landscape-up {
+		overflow-y: hidden;
+	}
+	@include for-tablet-landscape-up {
+		overflow-y: hidden;
+	}
+
+	@include for-desktop-up {
+		overflow-y: hidden;
+	}
+
+	@include for-big-desktop-up {
+		overflow-y: hidden;
+	}
+
+	@include for-big-desktop-up-xxl {
+		overflow-y: hidden;
+	}
+}

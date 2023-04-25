@@ -1,0 +1,137 @@
+.appSidebar {
+	font-family: $font-main;
+	width: $app-sidebar-width;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background: $app-sidebar-bg;
+	z-index: $app-sidebar-zindex;
+
+	& .menu {
+		& .menuHeader {
+			height: $app-sidebar-header-height;
+			& .logoHeader {
+				// width: 14vh;
+				width: 9vw;
+				height: auto;
+				margin-top: 5vh;
+				margin-left: rem(55px);
+				cursor: pointer;
+			}
+
+			& a {
+				font-size: rem(14px);
+				letter-spacing: rem(0.3px);
+				color: $skyblue-500;
+				margin-left: rem(55px);
+				margin-top: rem(10px);
+				text-decoration: none;
+			}
+		}
+		& .menuItem {
+			position: relative;
+			& .menuLink {
+				padding: $app-sidebar-component-padding-y
+					$app-sidebar-component-padding-x;
+				color: rgba($color: $light, $alpha: 0.6);
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				font-size: rem(14px);
+				font-weight: 100;
+				letter-spacing: rem(0.3px);
+
+				&:hover {
+					background: none;
+					color: $light;
+				}
+			}
+			& .menuIcon {
+				margin: 0 rem(8px) 0 rem(30px);
+
+				& img {
+					width: 28px;
+					height: auto;
+				}
+			}
+		}
+		& .menuFooter {
+			position: absolute;
+			bottom: 0;
+			height: rem(30px);
+			margin: rem(10px) rem(25px);
+			& a i {
+				color: $light;
+				padding: 0 rem(8px);
+				&:hover {
+					cursor: pointer;
+					background: none;
+					color: $skyblue-500;
+				}
+			}
+		}
+		.active {
+			& > .menuLink {
+				position: relative;
+				z-index: 10;
+				color: $skyblue-500;
+				background: none;
+			}
+		}
+	}
+
+	@include for-phone-only {
+		display: none;
+	}
+
+	@include for-tablet-portrait-up {
+		display: none;
+	}
+
+	@include for-tablet-landscape-up {
+		display: none;
+	}
+
+	@include for-desktop-up {
+		display: initial;
+	}
+
+	@include for-big-desktop-up {
+		display: initial;
+	}
+
+	@include for-big-desktop-up-xxl {
+		display: initial;
+		width: 15vw;
+		& .menu {
+			& .menuHeader {
+				& .logoHeader {
+					width: 8vw;
+					margin-left: 4vw;
+				}
+				& a {
+					font-size: 1.1vw;
+					margin-left: 4vw;
+				}
+			}
+
+			& .menuItem {
+				& .menuLink {
+					font-size: 1.1vw;
+					padding: 0 1vw;
+				}
+			}
+
+			& .menuFooter {
+				height: 2.2vw;
+				font-size: 1vw;
+				margin: 1vw 1.9vw;
+
+				& a i {
+					padding: 0 0.5vw;
+				}
+			}
+		}
+	}
+}

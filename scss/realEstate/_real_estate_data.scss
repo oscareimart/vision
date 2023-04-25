@@ -1,0 +1,227 @@
+.dataDetailsRealStateTitle {
+	& h4 {
+		font-size: rem(15px);
+		letter-spacing: rem(0.2px);
+	}
+}
+
+.dataDetailsRealState {
+	font-size: rem(14px);
+	letter-spacing: rem(0.2px);
+	height: 57vh;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		width: 2px;
+		// margin-right: 30px;
+		// height: 200px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba($color: $skyblue-500, $alpha: 0.3);
+		border-radius: 5px;
+	}
+
+	& h4 {
+		font-size: rem(15px);
+		letter-spacing: rem(0.2px);
+	}
+
+	& ul {
+		// list-style-type: none;
+		// list-style-image: url("./../../public/icons/minus.png");
+
+		& li {
+			list-style: none;
+			background-image: url("./../../public/icons/minus.png");
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: 5px;
+			font-size: rem(13px);
+			letter-spacing: rem(0.2px);
+			margin-bottom: rem(12px);
+			padding: 0 0 0 10px;
+		}
+	}
+
+	@include for-phone-only {
+		height: auto;
+		margin-bottom: 25px;
+	}
+
+	@include for-tablet-portrait-up {
+		height: auto;
+		margin-bottom: 25px;
+	}
+
+	@include for-tablet-landscape-up {
+		height: auto;
+		margin-bottom: 25px;
+	}
+
+	@include for-desktop-up {
+		height: 53vh;
+		margin-bottom: 0;
+	}
+
+	@include for-big-desktop-up {
+		height: 57vh;
+		margin-bottom: 0;
+	}
+
+	@include for-big-desktop-up-xxl {
+		height: 57vh;
+		margin-bottom: 0;
+	}
+}
+
+.dataDetailsRealStateBtn {
+	height: 10vh;
+
+	& button {
+		background: #112933;
+		width: 100%;
+		font-size: rem(14px);
+		height: rem(28px);
+		border-radius: 0;
+		color: $light;
+		letter-spacing: rem(3px);
+		border: 0;
+
+		&:hover {
+			background: #112933;
+			color: $skyblue-500;
+		}
+		&:focus {
+			background: #112933;
+		}
+	}
+
+	@include for-phone-only {
+		height: 20vh;
+		display: block;
+		// margin-bottom: 30px;
+	}
+
+	@include for-tablet-portrait-up {
+		height: 20vh;
+	}
+
+	@include for-tablet-landscape-up {
+		height: 10vh;
+	}
+
+	@include for-desktop-up {
+		height: 10vh;
+	}
+
+	@include for-big-desktop-up {
+		height: 10vh;
+	}
+
+	@include for-big-desktop-up-xxl {
+		height: 10vh;
+	}
+}
+
+.dataDetailsRealStateQuote {
+	position: absolute;
+	font-family: $font-main;
+	color: $light;
+	font-size: rem(14px);
+	letter-spacing: rem(0.2px);
+	background: #112933;
+	height: 64.2vh;
+	width: 21.3vw;
+	z-index: 500;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	&::-webkit-scrollbar {
+		width: 2px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba($color: $light, $alpha: 0.3);
+		border-radius: 5px;
+	}
+
+	& .inputCustom {
+		border-width: 0 0 1px 0;
+		border-color: $light;
+		color: $light;
+		border-radius: 0;
+		background-color: transparent;
+		outline: none;
+		box-shadow: none;
+		font-size: rem(14px);
+	}
+
+	& .checkCustom {
+		background-color: transparent;
+		border-color: $light;
+		box-shadow: none;
+	}
+
+	@include for-phone-only {
+		height: auto;
+		width: 100%;
+		position: relative;
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	@include for-tablet-portrait-up {
+		height: auto;
+		width: 100%;
+		position: relative;
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	@include for-tablet-landscape-up {
+		height: 50vh;
+	}
+
+	@include for-desktop-up {
+		height: 60vh;
+	}
+
+	@include for-big-desktop-up {
+		height: 64.2vh;
+	}
+
+	@include for-big-desktop-up-xxl {
+		height: 64.2vh;
+	}
+}
+
+.dataDetailsRealStateModal {
+	font-family: $font-main;
+	color: $light;
+	font-size: rem(14px);
+
+	& .modalheaderRE {
+		background: #112933;
+		border: 0;
+		color: $light;
+	}
+	& .modalBodyRE {
+		background: #112933;
+		border: 0;
+
+		& .inputCustom {
+			border-width: 0 0 1px 0;
+			border-color: $light;
+			color: $light;
+			border-radius: 0;
+			background-color: transparent;
+			outline: none;
+			box-shadow: none;
+		}
+	}
+	& .modalFooterRE {
+		background: #112933;
+		border: 0;
+	}
+}

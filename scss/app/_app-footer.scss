@@ -1,0 +1,99 @@
+.appFooter {
+	font-family: $font-main;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	display: block;
+
+	& .contactFooter {
+		& span {
+			float: right;
+			padding: rem(17px);
+			margin-right: rem(35px);
+			color: $light;
+			text-decoration: none;
+			font-weight: 100;
+			letter-spacing: rem(1px);
+			font-size: rem(14px);
+
+			&:hover {
+				color: $skyblue-500;
+				font-size: rem(14.1px);
+			}
+		}
+	}
+
+	& .footerMobile {
+		bottom: 0;
+
+		& a {
+			float: right;
+			padding: 0 0 rem(17px) 0;
+			margin-right: rem(25px);
+			color: $light;
+			text-decoration: none;
+			font-weight: 100;
+			letter-spacing: rem(1px);
+			font-size: rem(16px);
+
+			&:hover {
+				color: $skyblue-500;
+				font-size: rem(14.1px);
+			}
+		}
+	}
+
+	@include for-phone-only {
+		& .contactFooter {
+			display: none;
+		}
+		& .footerMobile {
+			display: block;
+		}
+	}
+
+	@include for-tablet-portrait-up {
+		& .contactFooter {
+			display: none;
+		}
+		& .footerMobile {
+			display: block;
+		}
+	}
+
+	@include for-tablet-landscape-up {
+		& .contactFooter {
+			display: none;
+		}
+		& .footerMobile {
+			display: block;
+		}
+	}
+
+	@include for-desktop-up {
+		& .contactFooter {
+			display: block;
+		}
+		& .footerMobile {
+			display: none;
+		}
+	}
+
+	@include for-big-desktop-up {
+		& .contactFooter {
+			display: block;
+		}
+		& .footerMobile {
+			display: none;
+		}
+	}
+
+	@include for-big-desktop-up-xxl {
+		& .contactFooter {
+			display: block;
+		}
+		& .footerMobile {
+			display: none;
+		}
+	}
+}

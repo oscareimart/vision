@@ -1,0 +1,35 @@
+.appHeader {
+	font-family: $font-main;
+	z-index: $app-sidebar-zindex;
+	position: absolute;
+	width: 100%;
+	top: 0;
+
+	& .linkActive {
+		color: $skyblue-500;
+	}
+
+	@include for-phone-only {
+		display: block;
+	}
+
+	@include for-tablet-portrait-up {
+		display: block;
+	}
+
+	@include for-tablet-landscape-up {
+		display: block;
+	}
+
+	@include for-desktop-up {
+		display: none;
+	}
+
+	@include for-big-desktop-up {
+		display: none;
+	}
+
+	@include for-big-desktop-up-xxl {
+		display: none;
+	}
+}

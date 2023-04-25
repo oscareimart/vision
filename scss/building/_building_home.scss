@@ -1,0 +1,400 @@
+.buildingHome {
+	// height: 100vh;
+	width: 84%;
+	font-family: $font-main;
+	margin-top: 5vh;
+
+	& .buildingData {
+		margin-left: 50px;
+		margin-right: 50px;
+		text-align: right;
+
+		& a {
+			text-decoration: none;
+			color: $light;
+			font-size: rem(19px);
+			letter-spacing: rem(1px);
+			& span {
+				color: $skyblue-500;
+				font-weight: bold;
+			}
+		}
+
+		& .imageBuildData {
+			width: 100%;
+			height: 220px;
+			position: relative;
+		}
+	}
+
+	& .buildingImgR {
+		width: 50%;
+		height: 250px;
+		// background: $danger;
+		margin-bottom: 100px;
+	}
+
+	& .buildingImgL {
+		margin-top: -180px;
+		width: 50%;
+		height: 250px;
+		// background: $danger;
+		float: right;
+	}
+
+	@include for-phone-only {
+		width: 100%;
+
+		& .buildingImgR {
+			width: 100%;
+			margin-bottom: 50px;
+		}
+
+		& .buildingImgL {
+			width: 100%;
+			margin-top: 0;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include for-tablet-portrait-up {
+		width: 80%;
+
+		& .buildingImgR {
+			width: 100%;
+			margin-bottom: 50px;
+		}
+
+		& .buildingImgL {
+			width: 100%;
+			margin-top: 0;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include for-tablet-landscape-up {
+		width: 96%;
+
+		& .buildingImgR {
+			width: 50%;
+			margin-bottom: 100px;
+		}
+
+		& .buildingImgL {
+			width: 50%;
+			margin-top: -180px;
+			margin-bottom: 0;
+		}
+	}
+
+	@include for-desktop-up {
+		width: 96%;
+	}
+
+	@include for-big-desktop-up {
+		width: 84%;
+		& .buildingData {
+			& a {
+				font-size: 1.5vw;
+			}
+		}
+	}
+
+	@include for-big-desktop-up-xxl {
+		width: 75%;
+		& .buildingData {
+			& .imageBuildData {
+				height: 16.1vw;
+			}
+		}
+
+		& .buildingImgR {
+			height: 18.3vw;
+		}
+		& .buildingImgL {
+			height: 18.3vw;
+		}
+	}
+}
+
+.swiperBuildingDetail {
+	width: 100%;
+	height: 75vh;
+	margin-top: 3%;
+
+	& .swiperSlideCustom {
+		text-align: center;
+		font-size: 19px;
+		background: $black-400;
+
+		/* Center slide text vertically */
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+
+		& img {
+			display: block;
+			width: auto;
+			height: 100%;
+			// object-fit: cover;
+			object-fit: contain;
+		}
+	}
+
+	@include for-phone-only {
+		height: 30vh;
+	}
+
+	@include for-tablet-portrait-up {
+		height: 52vh;
+	}
+
+	@include for-tablet-landscape-up {
+		height: 66vh;
+	}
+
+	@include for-desktop-up {
+		height: 75vh;
+	}
+
+	@include for-big-desktop-up {
+		height: 75vh;
+	}
+
+	@include for-big-desktop-up-xxl {
+		height: 75vh;
+	}
+}
+
+.thumbBuildingDetail {
+	height: 15vh;
+	box-sizing: border-box;
+	padding: 2px 0;
+	margin-top: 8px;
+
+	& .thumbSlideCustom {
+		width: auto;
+		height: 100%;
+		opacity: 0.5;
+
+		& img {
+			display: block;
+			width: auto;
+			height: 100%;
+			object-fit: cover;
+			// object-fit: contain;
+		}
+	}
+
+	& .thumbSlideCustomActive {
+		opacity: 1;
+	}
+
+	@include for-phone-only {
+		height: 10vh;
+	}
+
+	@include for-tablet-portrait-up {
+		height: 15vh;
+	}
+
+	@include for-tablet-landscape-up {
+		height: 15vh;
+	}
+
+	@include for-desktop-up {
+		height: 15vh;
+	}
+
+	@include for-big-desktop-up {
+		height: 15vh;
+	}
+
+	@include for-big-desktop-up-xxl {
+		height: 15vh;
+	}
+}
+
+.dataDetails {
+	color: $light;
+	font-family: $font-main;
+	letter-spacing: rem(4px);
+	margin-top: 5vh;
+	margin-left: 8%;
+	margin-right: 8%;
+
+	& .dataDetailsTitle {
+		height: 13vh;
+		& label {
+			font-size: rem(25px);
+			line-height: rem(20px);
+		}
+	}
+
+	& .dataDetailsCode {
+		color: $skyblue-500;
+	}
+
+	& .dataDetailsDescription {
+		margin-top: rem(20px);
+		font-size: rem(14px);
+		letter-spacing: rem(0.2px);
+		text-align: justify;
+		height: 34vh;
+	}
+
+	& .dataDetailsTechnical {
+		letter-spacing: rem(0.2px);
+		font-size: rem(14px);
+		height: 38vh;
+	}
+
+	@include for-phone-only {
+		& .dataDetailsTitle {
+			height: auto;
+			margin-bottom: 20px;
+		}
+
+		& .dataDetailsDescription {
+			height: auto;
+			margin-bottom: 25px;
+		}
+	}
+
+	@include for-tablet-portrait-up {
+		& .dataDetailsTitle {
+			height: auto;
+			margin-bottom: 20px;
+		}
+
+		& .dataDetailsDescription {
+			height: auto;
+			margin-bottom: 25px;
+		}
+	}
+
+	@include for-tablet-landscape-up {
+		& .dataDetailsTitle {
+			height: 17vh;
+			margin-bottom: 0;
+		}
+
+		& .dataDetailsDescription {
+			height: 30vh;
+		}
+	}
+
+	@include for-desktop-up {
+		& .dataDetailsTitle {
+			height: 17vh;
+			margin-bottom: 0;
+		}
+
+		& .dataDetailsDescription {
+			height: 30vh;
+		}
+	}
+
+	@include for-big-desktop-up {
+		& .dataDetailsTitle {
+			height: 13vh;
+			margin-bottom: 0;
+		}
+
+		& .dataDetailsDescription {
+			height: 30vh;
+		}
+	}
+
+	@include for-big-desktop-up-xxl {
+		& .dataDetailsTitle {
+			height: 13vh;
+			margin-bottom: 0;
+
+			& label {
+				font-size: 2vw;
+				line-height: 1.5vw;
+			}
+		}
+
+		& .dataDetailsDescription {
+			height: 30vh;
+			font-size: 1.1vw;
+		}
+
+		& .dataDetailsTechnical {
+			font-size: 1.1vw;
+		}
+	}
+}
+
+.barContainer {
+	background: $light;
+	position: absolute;
+	// transform: translateY(-50%);
+	top: 0;
+	right: 0;
+	margin-left: 50px;
+	width: 4px;
+	height: 60px;
+	margin-right: 40px;
+	margin-top: 20px;
+	border-radius: 5px;
+	//border darken(#98AFC7, 40%) 3px solid
+	& .bar {
+		background: $skyblue-500;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 80%;
+		//border-top: 6px solid #FFF;
+		box-sizing: border-box;
+		animation: grow 1.5s ease-out forwards;
+		transform-origin: top;
+	}
+
+	@include for-phone-only {
+		height: 40px;
+		margin-top: 70px;
+		margin-right: 20px;
+	}
+
+	@include for-tablet-portrait-up {
+		height: 60px;
+		margin-top: 70px;
+		margin-right: 40px;
+	}
+
+	@include for-tablet-landscape-up {
+		height: 60px;
+		margin-top: 70px;
+		margin-right: 40px;
+	}
+
+	@include for-desktop-up {
+		height: 60px;
+		margin-top: 20px;
+		margin-right: 40px;
+	}
+
+	@include for-big-desktop-up {
+		height: 60px;
+		margin-top: 20px;
+		margin-right: 45px;
+	}
+
+	@include for-big-desktop-up-xxl {
+		height: 60px;
+		margin-top: 20px;
+		margin-right: 45px;
+	}
+}

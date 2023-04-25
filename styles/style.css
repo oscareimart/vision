@@ -1,0 +1,228 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+.content_title_svg {
+}
+
+.svg_title {
+	width: 700px;
+	height: 300px;
+	position: relative;
+	left: 50%;
+	top: 40%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	z-index: 10;
+}
+
+.path_try_1v {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+}
+
+.path_try_2v {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 0.3s;
+}
+
+.path_try_1vi {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 0.8s;
+}
+
+.path_try_1si {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 1s;
+}
+
+.path_try_2si {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 1.2s;
+}
+
+.path_try_1io {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 1.4s;
+}
+
+.path_try_1on {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 1.6s;
+}
+.path_try_1o {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 1.8s;
+}
+.path_try_1n {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 2s;
+}
+
+.path_try_1m {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 2.2s;
+}
+
+.path_try_2m {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 2.4s;
+}
+
+.path_try_3m {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 2.6s;
+}
+.path_try_1d {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 2.8s;
+}
+.path_try_2o {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 3s;
+}
+.path_try_2d {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 3.2s;
+}
+.path_try_1de {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 3.4s;
+}
+
+.path_try_1er {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 3.6s;
+}
+.path_try_1r {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 3.8s;
+}
+.path_try_1rn {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 4s;
+}
+.path_try_2n {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 4.2s;
+}
+.path_try_1a {
+	stroke-dasharray: 500;
+	stroke: #0982a3;
+	stroke-dashoffset: 0;
+	animation: dash 0.8s linear;
+	animation-direction: initial;
+	animation-fill-mode: both;
+	animation-delay: 4.4s;
+}
+
+@keyframes dash {
+	from {
+		stroke-dashoffset: 500;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}

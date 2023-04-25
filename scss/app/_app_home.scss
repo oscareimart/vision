@@ -1,0 +1,204 @@
+.appHome {
+	font-family: $font-main;
+
+	& .swiperHome {
+		width: 100%;
+		height: 45vh;
+		margin-top: rem(120px);
+
+		& .swiperSlide {
+			// background: white;
+			text-align: center;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+
+			& .swiperWaterMark {
+				width: 15%;
+				height: auto;
+				position: absolute;
+			}
+
+			& .swiperImgMain {
+				display: block;
+				width: 35%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: rem(900px);
+				opacity: 0.4;
+				filter: grayscale(1);
+			}
+		}
+
+		@include for-phone-only {
+			height: 40vh;
+			& .swiperSlide {
+				& .swiperImgMain {
+					width: 80%;
+				}
+
+				& .swiperWaterMark {
+					width: 30%;
+				}
+			}
+		}
+
+		@include for-tablet-portrait-up {
+			height: 45vh;
+
+			& .swiperSlide {
+				& .swiperImgMain {
+					width: 50%;
+				}
+
+				& .swiperWaterMark {
+					width: 20%;
+				}
+			}
+		}
+
+		@include for-tablet-landscape-up {
+			& .swiperSlide {
+				& .swiperImgMain {
+					width: 37%;
+				}
+
+				& .swiperWaterMark {
+					width: 15%;
+				}
+			}
+		}
+
+		@include for-desktop-up {
+			& .swiperSlide {
+				& .swiperImgMain {
+					width: 36%;
+				}
+
+				& .swiperWaterMark {
+					width: 15%;
+				}
+			}
+		}
+
+		@include for-big-desktop-up {
+			& .swiperSlide {
+				& .swiperImgMain {
+					width: 28%;
+				}
+
+				& .swiperWaterMark {
+					width: 12%;
+				}
+			}
+		}
+
+		@include for-big-desktop-up-xxl {
+			& .swiperSlide {
+				& .swiperImgMain {
+					width: 28%;
+				}
+
+				& .swiperWaterMark {
+					width: 10%;
+				}
+			}
+		}
+	}
+
+	& .progressNumber {
+		color: $light;
+		// position: absolute;
+		display: inline-block;
+		padding: 2px;
+		font-size: rem(14px);
+	}
+
+	& .homeProgressBar {
+		& .progressBarStyle {
+			height: 2px;
+			margin-top: 12px;
+
+			& .progressBarEl {
+				background: $skyblue-500;
+			}
+		}
+	}
+}
+
+.homeTitle {
+	font-family: $font-main;
+	color: $light;
+	letter-spacing: rem(1px);
+	text-align: center;
+
+	& .homeTitleA {
+		display: inline-block;
+		& a {
+			color: $light;
+			text-decoration: none;
+			font-size: rem(24px);
+			letter-spacing: rem(1.5px);
+			&:hover {
+				color: $skyblue-500;
+			}
+		}
+	}
+
+	& .homeLLeft {
+		border-top: 2px solid $light;
+		height: 2px;
+		max-width: 250px;
+		width: 20%;
+		padding: 0;
+		margin: 0px 60px 0 15px;
+		display: inline-block;
+	}
+
+	& .homeLRight {
+		border-top: 2px solid $light;
+		height: 2px;
+		max-width: 250px;
+		width: 20%;
+		padding: 0;
+		margin: 0px 8px 0 60px;
+		display: inline-block;
+	}
+
+	& .hideBarHome {
+		border-top: 0;
+	}
+
+	& .homeIconNavigation {
+		display: inline-block;
+		height: 20px;
+
+		& i {
+			position: absolute;
+			color: $skyblue-500;
+			font-size: rem(8px);
+			margin-top: rem(15.5px);
+			cursor: pointer;
+		}
+	}
+
+	@include for-phone-only {
+		& .homeLLeft {
+			width: 20px;
+			margin: 0px 15px 0 15px;
+		}
+		& .homeLRight {
+			width: 20px;
+			margin: 0px 8px 0 15px;
+		}
+	}
+}

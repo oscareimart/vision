@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Overlock+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap");
+@import url("https://fonts.cdnfonts.com/css/hk-groteks");
+@font-face {
+	font-family: "EngraversGothicBT";
+	src: url("./../public/fonts/EngGoth.ttf");
+}
+@import "mixins";
+@import "functions";
+@import "variables";
+@import "app";
+@import "building";
+@import "real_estate";
+@import "team";

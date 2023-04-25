@@ -1,0 +1,160 @@
+.teamCard {
+	background: #112933;
+	height: 185px;
+	margin: 10px 0px 10px 0px;
+	font-family: $font-main;
+
+	& .teamCardImg {
+		position: relative;
+		// width: 55%;
+		height: 100%;
+		background: $light;
+	}
+
+	& .teamCardInfo {
+		display: flex;
+		height: 185px;
+		color: $light;
+		justify-content: center;
+		align-items: flex-end;
+
+		& label {
+			color: white;
+			font-size: rem(13px);
+		}
+	}
+}
+
+.teamModal {
+	font-family: $font-main;
+
+	& .teamModalBody {
+		height: 350px;
+		background: #112933;
+		margin: 0;
+		padding: 0;
+
+		& .teamModalImg {
+			margin: 0;
+			padding: 0;
+			height: 350px;
+			position: relative;
+			background: white;
+		}
+
+		& .teamModalInfo {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			// height: 350px;
+			color: $light;
+
+			& label {
+				font-size: rem(15px);
+				letter-spacing: rem(3px);
+				text-transform: uppercase;
+				text-align: center;
+			}
+
+			& p {
+				font-size: rem(13px);
+				text-align: justify;
+				margin-top: -30px;
+			}
+
+			& a {
+				color: white;
+				font-size: rem(13px);
+				align-self: flex-end;
+				text-align: end;
+			}
+		}
+	}
+
+	@include for-phone-only {
+		& .teamModalBody {
+			height: auto;
+
+			& .teamModalImg {
+				height: 280px;
+				margin: 20px 0 15px 0;
+			}
+
+			& .teamModalInfo {
+				& p {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	@include for-tablet-portrait-up {
+		& .teamModalBody {
+			height: auto;
+
+			& .teamModalImg {
+				height: 300px;
+				margin: 20px 0 15px 0;
+			}
+
+			& .teamModalInfo {
+				& p {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	@include for-tablet-landscape-up {
+		& .teamModalBody {
+			height: 350px;
+
+			& .teamModalImg {
+				height: 350px;
+				margin: 0;
+			}
+
+			& .teamModalInfo {
+				& p {
+					margin-top: -30px;
+				}
+			}
+		}
+	}
+
+	@include for-desktop-up {
+		& .teamModalBody {
+			height: 350px;
+
+			& .teamModalInfo {
+				& p {
+					margin-top: -30px;
+				}
+			}
+		}
+	}
+
+	@include for-big-desktop-up {
+		& .teamModalBody {
+			height: 350px;
+
+			& .teamModalInfo {
+				& p {
+					margin-top: -30px;
+				}
+			}
+		}
+	}
+
+	@include for-big-desktop-up-xxl {
+		& .teamModalBody {
+			height: 350px;
+
+			& .teamModalInfo {
+				& p {
+					margin-top: -30px;
+				}
+			}
+		}
+	}
+}
