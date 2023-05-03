@@ -5,6 +5,14 @@ import styles from './../scss/style.module.scss'
 import { AppSettings } from "../settings/app-settings"
 import * as consult from "./../services/ConsultServices"
 import LoadingDiv from '../components/loading/LoadingDiv'
+import Pagination from "@mui/material/Pagination"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+
+const theme = createTheme({
+    palette: {
+        mode: 'dark',
+    },
+})
 
 const building = (props) => {
     const appSettings = useContext(AppSettings)
@@ -13,6 +21,8 @@ const building = (props) => {
 
     const [percentageDiv, setPercentageDiv] = useState(0)
 
+    const [currentPage, setCurrentPage] = useState(1)
+
     useEffect(() => {
         let isSubscribed = true
         const initBuilding = () => {
@@ -20,21 +30,35 @@ const building = (props) => {
             appSettings.appFooterFunc(true)
         }
 
+        if (isSubscribed) {
+            initBuilding()
+        }
+
+        return () => {
+            isSubscribed = false
+        }
+    }, [])
+
+    useEffect(() => {
+        let isSubscribed = true
         const getDataBuilding = async () => {
             try {
-                const res = await consult.getAllData('constructions')
-                // console.log(res)
+                const res = await consult.getAllData('constructions', {
+                    paginate: {
+                        page: currentPage,
+                        pageSize: 5,
+                    }
+                })
+                console.log(res)
                 if (res.status === 200) {
-                    setDataBuildings(res.data?.data)
+                    setDataBuildings(res.data)
                 }
             } catch (error) {
                 console.log(error.response)
             }
             setLoadDataBuildings(false)
         }
-
         if (isSubscribed) {
-            initBuilding()
             setLoadDataBuildings(true)
             getDataBuilding()
         }
@@ -42,7 +66,11 @@ const building = (props) => {
         return () => {
             isSubscribed = false
         }
-    }, [])
+    }, [currentPage]);
+
+    const onChangePaginate = (e, page) => {
+        if (page) setCurrentPage(page)
+    }
 
     const onScroll = (e) => {
         // console.log(e)
@@ -56,7 +84,7 @@ const building = (props) => {
     }
 
     return (
-        <>
+        <ThemeProvider theme={theme}>
             <div className={styles.appContent} onScroll={(e) => onScroll(e)}>
                 <div className={styles.lineSidebarDiv} />
                 <div className="row">
@@ -70,15 +98,16 @@ const building = (props) => {
                                     ></div>
                                 </div>
                                 {
-                                    dataBuildings.length > 0 ? <>
+                                    dataBuildings?.data?.length > 0 ? <>
                                         {
-                                            dataBuildings?.map((row, i) => {
+                                            dataBuildings?.data?.map((row, i) => {
                                                 if (i % 2 === 0) {
                                                     return (
                                                         <ListItemLeft
                                                             key={i}
                                                             rowData={row}
                                                             pathnameCust="building"
+                                                            number={i}
                                                         />
                                                     )
                                                 } else {
@@ -99,9 +128,26 @@ const building = (props) => {
                             </div>
                         }
                     </div>
+                    {
+                        dataBuildings?.data?.length > 0 && <>
+                            <div className="row my-5">
+                                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-center text-light"
+                                    style={{ zIndex: 100, color: "white" }}
+                                >
+                                    <Pagination
+                                        count={dataBuildings.meta?.pagination?.pageCount || 10}
+                                        page={currentPage}
+                                        defaultPage={1}
+                                        size="large"
+                                        onChange={(e, page) => onChangePaginate(e, page)}
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    }
                 </div>
             </div>
-        </>
+        </ThemeProvider>
     )
 }
 
