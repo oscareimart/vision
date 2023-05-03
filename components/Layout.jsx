@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
         const getDataCompany = async () => {
             try {
                 const res = await consult.getAllData('company')
+                console.log(res.data)
                 if (res.status === 200) {
                     setDataCompany(res.data?.data?.attributes)
                 }
