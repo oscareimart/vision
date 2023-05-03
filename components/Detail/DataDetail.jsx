@@ -13,10 +13,24 @@ const DataDetail = (props) => {
     const [optCheckData, setOptCheckData] = useState([])
     const [showQuote, setShowQuote] = useState(false)
 
-    const onClickQuotate = () => {
+    const onClickQuotate = (e) => {
+        e.preventDefault()
         if (showQuote) {
             console.log(dataQuotate)
             console.log(optCheckData)
+            if (dataQuotate.email && dataQuotate.name) {
+                if (optCheckData.length > 0) {
+                    try {
+
+                    } catch (error) {
+                        console.log(error)
+                    }
+                } else {
+                    console.log("Seleccione algun departamento")
+                }
+            } else {
+                console.log("Seleccione email y nombre")
+            }
         } else {
             setShowQuote(true)
         }
@@ -55,14 +69,6 @@ const DataDetail = (props) => {
                     </div>
                 </>}
                 {
-                    showQuote && <QuotateFormOpc
-                        dataQuotate={{ state: dataQuotate, func: (dat) => setDataQuotate(dat) }}
-                        showQuote={{ func: () => setShowQuote(!showQuote) }}
-                        dataOpt={dataShow}
-                        optCheckData={{ state: optCheckData, func: (dat) => setOptCheckData(dat) }}
-                    />
-                }
-                {
                     (type === "real_estate" && !showQuote) && <>
                         <div className={`text-muted ${styles.dataDetailsRealStateTitle} mt-3`}>
                             <h4>{dataDescription?.state?.attributes?.title || ""} <span className='float-end'>{dataDescription?.state?.attributes?.surface || ""}</span></h4>
@@ -73,19 +79,29 @@ const DataDetail = (props) => {
                         />
                     </>
                 }
-                {
-                    type === "real_estate" && <>
-                        <div className={styles.dataDetailsRealStateBtn}>
-                            <button
-                                className='text-uppercase'
-                                type='button'
-                                onClick={() => onClickQuotate()}
-                            >
-                                {showQuote ? 'Enviar' : 'Cotizar'}
-                            </button>
-                        </div>
-                    </>
-                }
+                <form onSubmit={(e) => onClickQuotate(e)} autoComplete='off'>
+                    {
+                        showQuote && <QuotateFormOpc
+                            dataQuotate={{ state: dataQuotate, func: (dat) => setDataQuotate(dat) }}
+                            showQuote={{ func: () => setShowQuote(!showQuote) }}
+                            dataOpt={dataShow}
+                            optCheckData={{ state: optCheckData, func: (dat) => setOptCheckData(dat) }}
+                        />
+                    }
+                    {
+                        type === "real_estate" && <>
+                            <div className={styles.dataDetailsRealStateBtn}>
+                                <button
+                                    className='text-uppercase'
+                                    type='submit'
+                                // onClick={() => onClickQuotate()}
+                                >
+                                    {showQuote ? 'Enviar' : 'Cotizar'}
+                                </button>
+                            </div>
+                        </>
+                    }
+                </form>
             </div>
         </>
     )
