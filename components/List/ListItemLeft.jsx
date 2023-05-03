@@ -6,11 +6,11 @@ import styles from './../../scss/style.module.scss'
 import { env_values } from './../../settings/env'
 
 const ListItemLeft = (props) => {
-    const { rowData, pathnameCust } = props
+    const { rowData, pathnameCust, number = -1 } = props
     // console.log(rowData)
     return (
         <>
-            <div className={styles.buildingImgR}>
+            <div className={`${styles.buildingImgR} ${number === 0 ? styles.quitMargin : ""}`}>
                 <div className={styles.buildingData}>
                     <Link href={`/${pathnameCust}/${rowData?.id}`} className='text-capitalize'>{rowData?.attributes?.title || ""} <span>{rowData?.attributes?.code || "00"}</span></Link>
                     <div className={styles.imageBuildData}>
