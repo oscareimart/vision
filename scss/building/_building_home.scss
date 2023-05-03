@@ -42,11 +42,16 @@
 		float: right;
 	}
 
+	& .quitMargin {
+		margin-top: 0;
+	}
+
 	@include for-phone-only {
 		width: 100%;
 
 		& .buildingImgR {
 			width: 100%;
+			margin-top: 350px;
 			margin-bottom: 50px;
 		}
 
@@ -54,6 +59,10 @@
 			width: 100%;
 			margin-top: 0;
 			margin-bottom: 50px;
+		}
+
+		& .quitMargin {
+			margin-top: 0;
 		}
 	}
 
@@ -62,6 +71,7 @@
 
 		& .buildingImgR {
 			width: 100%;
+			margin-top: 350px;
 			margin-bottom: 50px;
 		}
 
@@ -70,6 +80,10 @@
 			margin-top: 0;
 			margin-bottom: 50px;
 		}
+
+		& .quitMargin {
+			margin-top: 0;
+		}
 	}
 
 	@include for-tablet-landscape-up {
@@ -77,6 +91,7 @@
 
 		& .buildingImgR {
 			width: 50%;
+			margin-top: 0;
 			margin-bottom: 100px;
 		}
 
@@ -101,7 +116,7 @@
 	}
 
 	@include for-big-desktop-up-xxl {
-		width: 75%;
+		width: 85%;
 		& .buildingData {
 			& .imageBuildData {
 				height: 16.1vw;
@@ -110,9 +125,11 @@
 
 		& .buildingImgR {
 			height: 18.3vw;
+			margin-bottom: 7.3vw;
 		}
 		& .buildingImgL {
 			height: 18.3vw;
+			margin-top: -13.2vw;
 		}
 	}
 }
