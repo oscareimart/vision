@@ -7,6 +7,15 @@ import LoadingDiv from '../components/loading/LoadingDiv'
 import styles from './../scss/style.module.scss'
 import * as consult from './../services/ConsultServices'
 
+import Pagination from "@mui/material/Pagination"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+
+const theme = createTheme({
+    palette: {
+        mode: 'dark',
+    },
+})
+
 const RealEstate = (props) => {
     const appSettings = useContext(AppSettings)
 
@@ -15,6 +24,8 @@ const RealEstate = (props) => {
 
     const [percentageDiv, setPercentageDiv] = useState(0)
 
+    const [currentPage, setCurrentPage] = useState(1)
+
     useEffect(() => {
         let isSubscribed = true
         const initBuilding = () => {
@@ -22,12 +33,23 @@ const RealEstate = (props) => {
             appSettings.appFooterFunc(true)
         }
 
+        if (isSubscribed) {
+            initBuilding()
+        }
+
+        return () => {
+            isSubscribed = false
+        }
+    }, [])
+
+    useEffect(() => {
+        let isSubscribed = true
         const getDataRealEstate = async () => {
             try {
                 const res = await consult.getAllData('realties')
                 // console.log(res)
                 if (res.status === 200) {
-                    setDataRealEstates(res.data?.data)
+                    setDataRealEstates(res.data)
                 }
             } catch (error) {
                 console.log(error.response)
@@ -36,7 +58,6 @@ const RealEstate = (props) => {
         }
 
         if (isSubscribed) {
-            initBuilding()
             setLoadDataRealEstate(true)
             getDataRealEstate()
         }
@@ -44,7 +65,11 @@ const RealEstate = (props) => {
         return () => {
             isSubscribed = false
         }
-    }, [])
+    }, [currentPage]);
+
+    const onChangePaginate = (e, page) => {
+        if (page) setCurrentPage(page)
+    }
 
     const onScroll = (e) => {
         // console.log(e)
@@ -58,7 +83,7 @@ const RealEstate = (props) => {
     }
 
     return (
-        <>
+        <ThemeProvider theme={theme}>
             <div className={styles.appContent} onScroll={(e) => onScroll(e)}>
                 <div className={styles.lineSidebarDiv} />
                 <div className="row">
@@ -72,15 +97,16 @@ const RealEstate = (props) => {
                                     ></div>
                                 </div>
                                 {
-                                    dataRealEstates.length > 0 ? <>
+                                    dataRealEstates?.data?.length > 0 ? <>
                                         {
-                                            dataRealEstates?.map((row, i) => {
+                                            dataRealEstates?.data?.map((row, i) => {
                                                 if (i % 2 === 0) {
                                                     return (
                                                         <ListItemLeft
                                                             key={i}
                                                             rowData={row}
                                                             pathnameCust="real_estate"
+                                                            number={i}
                                                         />
                                                     )
                                                 } else {
@@ -102,9 +128,26 @@ const RealEstate = (props) => {
                         }
 
                     </div>
+                    {
+                        dataRealEstates?.data?.length > 0 && <>
+                            <div className="row my-5">
+                                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-center text-light"
+                                    style={{ zIndex: 100, color: "white" }}
+                                >
+                                    <Pagination
+                                        count={dataRealEstates.meta?.pagination?.pageCount || 10}
+                                        page={currentPage}
+                                        defaultPage={1}
+                                        size="large"
+                                        onChange={(e, page) => onChangePaginate(e, page)}
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    }
                 </div>
             </div>
-        </>
+        </ThemeProvider>
     )
 }
 
