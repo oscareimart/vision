@@ -6,6 +6,8 @@ import Contact from '../contact/Contact'
 const Footer = (props) => {
     const [modalContact, setModalContact] = useState(false)
 
+    const { dataCompany = {} } = props
+
     return (
         <>
             <div className={styles.appFooter}>
@@ -18,15 +20,25 @@ const Footer = (props) => {
                     </span>
                 </div>
                 <div className={styles.footerMobile}>
-                    <Link href="/"><i className="fa-solid fa-envelope"></i></Link>
-                    <Link
-                        href="https://www.facebook.com/visionmoderna"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i className="fa-brands fa-facebook-f"></i>
-                    </Link>
-                    <Link
+                    <span
+                        role="button"
+                        onClick={() => setModalContact(!modalContact)}
+                    ><i className="fa-solid fa-envelope"></i></span>
+
+                    {
+                        dataCompany?.state?.social_networks?.data?.map((row, i) => (
+                            <Link
+                                key={i}
+                                href={row.attributes?.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <i className={row.attributes.icon}></i>
+                            </Link>
+                        ))
+                    }
+
+                    {/* <Link
                         href="https://web.whatsapp.com/"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -39,7 +51,7 @@ const Footer = (props) => {
                         rel="noopener noreferrer"
                     >
                         <i className="fa-brands fa-instagram"></i>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
             <Contact
