@@ -7,9 +7,10 @@ import { env_values } from './../../settings/env'
 
 const DetailTeam = (props) => {
     const { modal, modalFunc, modalData = {} } = props
+
     return (
         <>
-            <Modal className={styles.teamModal} isOpen={modal} toggle={modalFunc} centered>
+            <Modal className={styles.teamModal} isOpen={modal} toggle={modalFunc} centered size='md'>
                 {/* <ModalHeader></ModalHeader> */}
                 <ModalBody className={styles.teamModalBody}>
                     <div className="row d-flex justify-content-center">
@@ -27,7 +28,11 @@ const DetailTeam = (props) => {
                             <div className="row ms-1 me-3 my-2">
                                 <label className='fw-bold'>{modalData.attributes?.position || ""}</label>
                                 <p>{modalData.attributes?.description || ""}</p>
-                                <Link href="/">ver bio</Link>
+                                <Link
+                                    href={`${env_values.API_URL}${modalData?.attributes?.CV?.data?.attributes?.url}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >ver bio</Link>
                             </div>
                         </div>
                     </div>
