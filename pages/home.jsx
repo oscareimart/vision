@@ -57,9 +57,9 @@ const Home = (props) => {
     }, []);
 
     const onSlideChange = (e) => {
-        console.log(e)
-        console.log(e.snapIndex)
-        console.log(indexSlider)
+        // console.log(e)
+        // console.log(e.snapIndex)
+        // console.log(indexSlider)
         setIndexSlider(parseInt(e.snapIndex, 10))
         setTitleMenu(Menu[e.snapIndex])
     }
