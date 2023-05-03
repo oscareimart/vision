@@ -121,15 +121,38 @@
 		display: inline-block;
 		padding: 2px;
 		font-size: rem(14px);
+		margin-top: 20px;
 	}
 
 	& .homeProgressBar {
+		margin-top: 20px;
+
 		& .progressBarStyle {
 			height: 2px;
 			margin-top: 12px;
 
 			& .progressBarEl {
 				background: $skyblue-500;
+			}
+		}
+	}
+
+	@include for-big-desktop-up-xxl {
+		& .swiperHome {
+			margin-top: 8.8vw;
+		}
+
+		& .progressNumber {
+			margin-top: 1.5vw;
+			font-size: 1.1vw;
+			padding: 0.2vw;
+		}
+
+		& .homeProgressBar {
+			margin-top: 1.5vw;
+			& .progressBarStyle {
+				margin-top: 0.8vw;
+				height: 0.2vw;
 			}
 		}
 	}
@@ -199,6 +222,14 @@
 		& .homeLRight {
 			width: 20px;
 			margin: 0px 8px 0 15px;
+		}
+	}
+
+	@include for-big-desktop-up-xxl {
+		& .homeTitleA {
+			& a {
+				font-size: 1.8vw;
+			}
 		}
 	}
 }
